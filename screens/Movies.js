@@ -118,7 +118,6 @@ const Movies = ({ navigation }) => {
     </SafeAreaView>
   );
 };
-
 const styles = StyleSheet.create({
   button: {
     textAlign: 'center',
@@ -126,6 +125,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightblue',
   },
 });
+
 
 export default Movies;
 

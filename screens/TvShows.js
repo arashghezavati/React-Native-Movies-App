@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { SafeAreaView, FlatList, TouchableOpacity, Text, StyleSheet, View } from "react-native";
 import { Picker } from "@react-native-picker/picker";
@@ -40,7 +41,7 @@ const TvShows = ({ navigation }) => {
       }
 
       if (currentPage === 1) {
-        setTvShowData(response.results.slice(0, 10)); // Display the first 10 results on the first page
+        setTvShowData(response.results.slice(0, 10)); 
         setTotalPages(response.total_pages);
       } else {
         setTvShowData((prevData) => [...prevData, ...response.results]);
@@ -52,7 +53,7 @@ const TvShows = ({ navigation }) => {
 
   const handleOptionChange = (newOption) => {
     setSelectedOption(newOption);
-    setCurrentPage(1); // Reset current page when changing options
+    setCurrentPage(1); 
   };
 
   const handleLoadMore = () => {
@@ -62,12 +63,12 @@ const TvShows = ({ navigation }) => {
   };
 
   const handleShowAll = () => {
+  
     setTvShowData((prevData) => {
       const allResults = (currentPage === 1) ? tvShowData : prevData;
-      return allResults;
+      return allResults.slice(0, 10);
     });
   };
-  
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -131,3 +132,5 @@ const styles = StyleSheet.create({
 });
 
 export default TvShows;
+
+
